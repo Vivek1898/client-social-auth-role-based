@@ -48,17 +48,27 @@ const Home = () => {
     }
 
     return (
-        <div style={{ margin: 'auto' }}>
-            <Card title="User Information" bordered={false} style={{ width: 300 }}>
-                <p><strong>Name:</strong> {user?.displayName}</p>
-                <p><strong>Email:</strong> {user?.emailId}</p>
-                <p><strong>Role:</strong> {user?.role}</p>
-                <p><strong>Visibility:</strong> {user?.visiblity}</p>
-            </Card>
-            <Button onClick={() => navigate('/staff/home')} style={{ marginTop: '20px' }}>
-                Dashboard
+        user ? (
+            <div style={{ margin: 'auto', width: 'fit-content', padding: '20px' }}>
+                <Card title="User Information" bordered={false} style={{ width: 300 }}>
+                    <p><strong>Name:</strong> {user?.displayName}</p>
+                    <p><strong>Email:</strong> {user?.emailId}</p>
+                    <p><strong>Role:</strong> {user?.role}</p>
+                    <p><strong>Visibility:</strong> {user?.visiblity}</p>
+                </Card>
+                <Button onClick={() => navigate('/staff/home')} style={{ marginTop: '20px' }}>
+                    Dashboard
+                </Button>
+            </div>
+        ) : (
+            <div style={{ margin: 'auto', width: 'fit-content', padding: '20px' }}>
+            <Button
+                type={'primary'}
+                onClick={() => navigate('/login')} style={{ marginTop: '20px'  }}>
+                Login
             </Button>
-        </div>
+            </div>
+        )
     );
 };
 

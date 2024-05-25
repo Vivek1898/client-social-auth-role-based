@@ -92,19 +92,30 @@ const Login = () => {
                         </Form>
                     )}
                 </Formik>
-                <button onClick={googleLoginUser} className="button">
-                    <div className="googlelogo"></div>
-                </button>
+                <pre>Don't have an account? <Button onClick={() => navigate('/register')} type="link">Register</Button></pre>
+                <pre>Continue with: </pre>
+                <div style={{margin: 'auto', width: 'fit-content', padding: '20px'}}>
+                    <button onClick={googleLoginUser} className="button" style={{
+                        border: 'none',
 
-                <button onClick={githubLogin} className="button">
-                    <div className="githublogo"></div>
-                </button>
-                {/*<button onClick={githubAuth} className="button">*/}
-                {/*    <div className="githublogo"></div>*/}
-                {/*</button>*/}
+                    }}>
+                        <div className="googlelogo"></div>
+                    </button>
+
+                    <button onClick={githubLogin} className="button" style={{
+                        marginLeft: '10px',
+                        border: 'none',
+
+                    }}>
+                        <div className="githublogo"></div>
+                    </button>
+                </div>
+                    {/*<button onClick={githubAuth} className="button">*/}
+                    {/*    <div className="githublogo"></div>*/}
+                    {/*</button>*/}
             </Col>
         </Row>
-    );
+);
 };
 
 export default Login;

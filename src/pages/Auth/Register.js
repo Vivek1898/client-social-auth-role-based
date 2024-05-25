@@ -41,7 +41,7 @@ const Register = () => {
                 <h1>Register</h1>
                 {isLoading ? <pre>Loading...</pre> : error ? <pre>{error}</pre> : null}
                 <Formik
-                    initialValues={{ name: '', email: '', contactNumber: '', companyName: '', password: '' }}
+                    initialValues={{name: '', email: '', contactNumber: '', companyName: '', password: ''}}
                     validate={(values) => {
                         const errors = {};
                         if (!values.name) {
@@ -58,16 +58,16 @@ const Register = () => {
                     }}
                     onSubmit={handleSubmit}
                 >
-                    {({ isSubmitting }) => (
+                    {({isSubmitting}) => (
                         <Form>
                             <Row gutter={[16, 16]}>
                                 <Col span={24}>
-                                    <Field as={Input} type="text" name="name" placeholder="Name" />
-                                    <ErrorMessage name="name"  component="div" style={{ color: 'red' }} />
+                                    <Field as={Input} type="text" name="name" placeholder="Name"/>
+                                    <ErrorMessage name="name" component="div" style={{color: 'red'}}/>
                                 </Col>
                                 <Col span={24}>
-                                    <Field as={Input} type="email" name="email" placeholder="Email" />
-                                    <ErrorMessage name="email" component="div" style={{ color: 'red' }} />
+                                    <Field as={Input} type="email" name="email" placeholder="Email"/>
+                                    <ErrorMessage name="email" component="div" style={{color: 'red'}}/>
                                 </Col>
                                 {/*<Col span={24}>*/}
                                 {/*    <Field as={Input} type="text" name="contactNumber" placeholder="Contact Number" />*/}
@@ -78,8 +78,8 @@ const Register = () => {
                                 {/*    <ErrorMessage name="companyName" component="div"  style={{ color: 'red' }} />*/}
                                 {/*</Col>*/}
                                 <Col span={24}>
-                                    <Field as={Input.Password} type="password" name="password" placeholder="Password" />
-                                    <ErrorMessage name="password" component="div"   style={{ color: 'red' }}/>
+                                    <Field as={Input.Password} type="password" name="password" placeholder="Password"/>
+                                    <ErrorMessage name="password" component="div" style={{color: 'red'}}/>
                                 </Col>
                                 <Col span={24}>
                                     <Button type="primary" htmlType="submit" disabled={isSubmitting}>
@@ -90,7 +90,14 @@ const Register = () => {
                         </Form>
                     )}
                 </Formik>
+                <pre>
+                    Already have an account?{' '}
+                <Button type="link" onClick={() => navigate('/login')}>
+                    Login
+                </Button>
+            </pre>
             </Col>
+
         </Row>
     );
 };

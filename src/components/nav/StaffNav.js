@@ -46,13 +46,13 @@ const StaffNav = () => {
             >
                 <Menu.Item key="1" icon={<ProfileTwoTone/>}>
                     <Link to="/staff/home">
-                        <a  className={activeName("/staff/home")}>Staff Profie</a>
+                        <a  className={activeName("/staff/home")}>Your Profile</a>
                     </Link>
                 </Menu.Item>
                 {}
                 <Menu.Item key="2" icon={<UserSwitchOutlined/>}>
                     <Link to="/staff/list">
-                        <a className={activeName("/staff/list")}>Staff List</a>
+                        <a className={activeName("/staff/list")}>Recommended Profiles</a>
                     </Link>
                 </Menu.Item>
 
