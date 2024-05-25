@@ -21,7 +21,7 @@ function App() {
             <Routes>
 
                 <Route path="/" exact  element={<Navigate to={"/home"}/>}/>
-                <Route path="/home" exact element={<StaffPrivateRoute component={Home} />}/>
+                <Route path="/home" exact element={<Home/>}/>
                 <Route path="/login" exact element={<Login/>}/>
                 <Route path="/register" exact element={<Register/>}/>
                 <Route path="/dashboard" exact element={<StaffPrivateRoute component={StaffHome} />} />
