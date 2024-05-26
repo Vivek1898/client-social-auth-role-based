@@ -131,11 +131,11 @@ const slice = createSlice({
 
             .addCase(updateUserProfile.fulfilled, (state, action) => {
                 if (action.payload) {
-                    state.user = action.payload;
+                    state.user = action.payload.user;
                     console.log(action.payload)
                     // state.user = action.payload;
-                    localStorage.setItem('user', JSON.stringify(action.payload));
-                    // localStorage.setItem('token', action.payload.token);
+                    localStorage.setItem('user', JSON.stringify(action.payload.user));
+                    localStorage.setItem('token', action.payload.token);
                 }
             })
 

@@ -166,6 +166,7 @@ console.log(user)
                 image: user.image,
                 password: user.password,
 
+
             });
         }
     }, [user, form ,dispatch]);
@@ -220,7 +221,10 @@ console.log(user)
                         <Input disabled={!isEditing} />
                     </Form.Item>
                     <Form.Item name="role" label="Role">
-                        <Input disabled={!isEditing} />
+                        <Select disabled={!isEditing}>
+                            <Option value="admin">Admin</Option>
+                            <Option value="user">User</Option>
+                        </Select>
                     </Form.Item>
                     <Form.Item name="visiblity" label="Visibility">
                         <Select disabled={!isEditing}>
