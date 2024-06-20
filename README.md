@@ -1,4 +1,4 @@
-[#Frontend Social Auth Api
+# Frontend Social Auth Api
 
 
 ## BACKEND API DOCS
